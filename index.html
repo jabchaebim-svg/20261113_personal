@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="ko" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동화 작가의 몽글몽글 서재 🐰💖 | 먼작귀 감성 포트폴리오</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts (Gaegu, Jua, Nanum Pen Script) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&family=Jua&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            50: '#FFFDF4',
+                            100: '#FFF9E3',
+                            200: '#FFF0A5', // Usagi Yellow
+                            300: '#FFE680',
+                        },
+                        pinky: {
+                            50: '#FFF0F5',
+                            100: '#FFD6E0', // Soft Pink
+                            200: '#FFB3C6',
+                            300: '#FF88A5',
+                        },
+                        sky: {
+                            50: '#F0F9FF',
+                            100: '#D4F1F9', // Sky Pastel
+                            200: '#B3E5F4',
+                            300: '#7CD4EC',
+                        },
+                        ink: {
+                            light: '#7A6558',
+                            DEFAULT: '#4A3B32', // Warm Brown Text
+                            dark: '#2D221B',
+                        }
+                    },
+                    fontFamily: {
+                        jua: ['"Jua"', 'sans-serif'],
+                        gaegu: ['"Gaegu"', 'cursive'],
+                        pen: ['"Nanum Pen Script"', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Global Styles & Aesthetics */
+        body {
+            background-color: #FFFDF4;
+            color: #4A3B32;
+            font-family: 'Gaegu', cursive;
+            background-image: 
+                radial-gradient(#FFD6E0 1.2px, transparent 1.2px), 
+                radial-gradient(#D4F1F9 1.2px, #FFFDF4 1.2px);
+            background-size: 48px 48px;
+            background-position: 0 0, 24px 24px;
+        }
+
+        /* Cute Floating Keyframe Animations */
+        @keyframes float-gentle {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(1.5deg); }
+        }
+
+        @keyframes wiggle-usagi {
+            0%, 100% { transform: rotate(-3deg) scale(1); }
+            50% { transform: rotate(3deg) scale(1.03); }
+        }
+
+        @keyframes ear-twitch {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(-6deg); }
+        }
+
+        @keyframes sparkle-pulse {
+            0%, 100% { opacity: 0.4; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .animate-float {
+            animation: float-gentle 4s ease-in-out infinite;
+        }
+
+        .animate-wiggle {
+            animation: wiggle-usagi 2.5s ease-in-out infinite;
+        }
+
+        .animate-ear {
+            transform-origin: bottom center;
+            animation: ear-twitch 1.8s ease-in-out infinite;
+        }
+
+        .animate-sparkle {
+            animation: sparkle-pulse 2s ease-in-out infinite;
+        }
+
+        /* Handwritten Pen Font styling helper */
+        .font-pen-text {
+            font-family: 'Nanum Pen Script', cursive;
+        }
+
+        /* Cute Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFFDF4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FFB3C6;
+            border-radius: 9999px;
+            border: 2px solid #FFFDF4;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF88A5;
+        }
+
+        /* Sticky Note Tape Effect */
+        .tape-effect {
+            position: relative;
+        }
+        .tape-effect::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-2deg);
+            width: 90px;
+            height: 22px;
+            background: rgba(255, 255, 255, 0.65);
+            border: 1px dashed rgba(74, 59, 50, 0.2);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            z-index: 20;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col justify-between selection:bg-pinky-100 selection:text-ink">
+
+    <!-- ================= HEADER / NAVIGATION ================= -->
+    <header class="sticky top-0 z-40 bg-cream-50/90 backdrop-blur-md border-b-4 border-dashed border-pinky-200 shadow-sm px-4 py-3">
+        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+            
+            <!-- Logo & Title -->
+            <a href="#" onclick="switchTab('home')" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-2xl bg-cream-200 border-2 border-ink flex items-center justify-center text-xl shadow-[2px_2px_0px_#4A3B32] group-hover:rotate-12 transition-transform">
+                    🐰
+                </div>
+                <div>
+                    <h1 class="font-jua text-xl sm:text-2xl text-ink leading-none flex items-center gap-1">
+                        몽글몽글 작가의 서재 <span class="text-pinky-300 text-base">✨</span>
+                    </h1>
+                    <p class="font-gaegu text-xs text-ink-light">마음을 보듬는 따뜻한 이야기를 짓습니다</p>
+                </div>
+            </a>
+
+            <!-- Navigation Tabs (홈 | 자기소개 | 작품소개 | 방명록) -->
+            <nav class="flex items-center gap-1 sm:gap-2 bg-white/80 p-1.5 rounded-full border-2 border-ink shadow-[3px_3px_0px_#FFD6E0]">
+                <button id="nav-home" onclick="switchTab('home')" class="nav-btn px-3 sm:px-4 py-1.5 rounded-full font-jua text-sm sm:text-base transition-all flex items-center gap-1">
+                    <span>🏠</span> 홈
+                </button>
+                <button id="nav-about" onclick="switchTab('about')" class="nav-btn px-3 sm:px-4 py-1.5 rounded-full font-jua text-sm sm:text-base transition-all flex items-center gap-1">
+                    <span>🐥</span> 자기소개
+                </button>
+                <button id="nav-works" onclick="switchTab('works')" class="nav-btn px-3 sm:px-4 py-1.5 rounded-full font-jua text-sm sm:text-base transition-all flex items-center gap-1">
+                    <span>🐱</span> 작품소개
+                </button>
+                <button id="nav-guestbook" onclick="switchTab('guestbook')" class="nav-btn px-3 sm:px-4 py-1.5 rounded-full font-jua text-sm sm:text-base transition-all flex items-center gap-1">
+                    <span>💌</span> 방명록
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT AREA ================= -->
+    <main class="flex-1 max-w-5xl w-full mx-auto p-4 sm:p-6 my-2">
+
+        <!-- ================= PAGE 1: HOME (랜딩페이지 - 우사기) ================= -->
+        <section id="page-home" class="page-content space-y-8">
+            
+            <!-- Hero Banner Container -->
+            <div class="bg-gradient-to-br from-cream-100 via-pinky-50 to-sky-100 rounded-3xl p-6 sm:p-10 border-4 border-ink shadow-[6px_6px_0px_#4A3B32] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+                
+                <!-- Background Floating Sparkles -->
+                <div class="absolute top-4 left-6 text-2xl animate-sparkle">✨</div>
+                <div class="absolute bottom-6 left-12 text-xl animate-sparkle" style="animation-delay: 0.7s;">⭐</div>
+                <div class="absolute top-8 right-12 text-2xl animate-sparkle" style="animation-delay: 1.2s;">💖</div>
+                <div class="absolute bottom-4 right-1/3 text-xl animate-sparkle" style="animation-delay: 0.4s;">♪</div>
+
+                <!-- Text Welcome Box -->
+                <div class="flex-1 space-y-4 z-10 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cream-200 border-2 border-ink font-jua text-sm text-ink shadow-[2px_2px_0px_#4A3B32]">
+                        <span>🎉</span> 반가워요! 작가 봄봄의 서재입니다
+                    </div>
+
+                    <h2 class="font-jua text-3xl sm:text-4xl lg:text-5xl text-ink leading-snug">
+                        오늘도 몽글몽글한<br class="hidden sm:inline"> 
+                        <span class="text-pinky-300 underline decoration-cream-200 decoration-wavy underline-offset-8">상상의 세계</span>로 놀러오세요! 🌟
+                    </h2>
+
+                    <p class="font-gaegu text-lg sm:text-xl text-ink-light leading-relaxed">
+                        소소하지만 따뜻하고, 엉뚱하지만 사랑스러운 우리들의 이야기를 동화와 에세이로 그려냅니다. 먼작귀 친구들처럼 유쾌하고 따뜻한 에너지를 전해드릴게요!
+                    </p>
+
+                    <div class="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-3">
+                        <button onclick="switchTab('works')" class="px-6 py-2.5 rounded-2xl bg-pinky-100 hover:bg-pinky-200 border-2 border-ink font-jua text-lg text-ink shadow-[4px_4px_0px_#4A3B32] active:translate-y-1 active:shadow-[1px_1px_0px_#4A3B32] transition-all flex items-center gap-2">
+                            <span>📚</span> 작품 구경하기
+                        </button>
+                        <button onclick="switchTab('guestbook')" class="px-6 py-2.5 rounded-2xl bg-sky-100 hover:bg-sky-200 border-2 border-ink font-jua text-lg text-ink shadow-[4px_4px_0px_#4A3B32] active:translate-y-1 active:shadow-[1px_1px_0px_#4A3B32] transition-all flex items-center gap-2">
+                            <span>✍️</span> 방명록 남기기
+                        </button>
+                    </div>
+                </div>
+
+                <!-- MAIN HERO USAGI SVG ILLUSTRATION -->
+                <div class="relative z-10 flex flex-col items-center flex-none">
+                    
+                    <!-- Speech Bubble -->
+                    <div class="relative bg-white border-3 border-ink px-5 py-2.5 rounded-2xl font-jua text-lg sm:text-xl text-ink shadow-[3px_3px_0px_#4A3B32] mb-3 animate-float">
+                        " 우라! 야하! 🐰🌰✨ "
+                        <!-- Bubble Tail -->
+                        <div class="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-r-3 border-b-3 border-ink rotate-45"></div>
+                    </div>
+
+                    <!-- Custom Authentic USAGI SVG (with Acorn & Forest Meadow) -->
+                    <div class="w-60 h-60 sm:w-72 sm:h-72 animate-wiggle">
+                        <svg viewBox="0 0 220 220" class="w-full h-full drop-shadow-[4px_6px_0px_rgba(74,59,50,0.15)]">
+                            <!-- Soft Forest Meadow Background Badge -->
+                            <path d="M 30 140 C 30 80, 80 40, 140 40 C 190 40, 210 90, 200 150 C 190 200, 110 200, 50 180 Z" fill="#D2EBD4" stroke="#4A3B32" stroke-width="4"/>
+                            
+                            <!-- Forest Trees Background Elements -->
+                            <path d="M 25 120 C 15 90, 40 70, 55 90 C 70 65, 95 85, 85 110 Z" fill="#99D19C" stroke="#4A3B32" stroke-width="3"/>
+                            <path d="M 155 110 C 145 80, 175 60, 190 85 C 205 70, 220 95, 200 120 Z" fill="#88C48C" stroke="#4A3B32" stroke-width="3"/>
+
+                            <!-- Left Ear (Tall & Cute) -->
+                            <g class="animate-ear">
+                                <ellipse cx="85" cy="45" rx="13" ry="38" fill="#FFF1AA" stroke="#4A3B32" stroke-width="4.5" transform="rotate(-8 85 45)"/>
+                                <ellipse cx="85" cy="45" rx="6" ry="24" fill="#FFB7C5" opacity="0.85" transform="rotate(-8 85 45)"/>
+                            </g>
+                            
+                            <!-- Right Ear (Tall & Cute) -->
+                            <g class="animate-ear" style="animation-delay: 0.3s;">
+                                <ellipse cx="125" cy="45" rx="13" ry="38" fill="#FFF1AA" stroke="#4A3B32" stroke-width="4.5" transform="rotate(8 125 45)"/>
+                                <ellipse cx="125" cy="45" rx="6" ry="24" fill="#FFB7C5" opacity="0.85" transform="rotate(8 125 45)"/>
+                            </g>
+
+                            <!-- Usagi Body (Cream Yellow #FFF1AA) -->
+                            <ellipse cx="105" cy="130" rx="55" ry="50" fill="#FFF1AA" stroke="#4A3B32" stroke-width="4.5"/>
+                            
+                            <!-- Soft Eyebrows (Curved Lines above eyes) -->
+                            <path d="M 75 98 Q 83 93 91 99" fill="none" stroke="#4A3B32" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M 119 99 Q 127 93 135 98" fill="none" stroke="#4A3B32" stroke-width="3" stroke-linecap="round"/>
+
+                            <!-- Eyes with White Highlights -->
+                            <ellipse cx="83" cy="112" rx="7.5" ry="10" fill="#4A3B32"/>
+                            <circle cx="81" cy="109" r="2.5" fill="#FFFFFF"/>
+                            
+                            <ellipse cx="127" cy="112" rx="7.5" ry="10" fill="#4A3B32"/>
+                            <circle cx="125" cy="109" r="2.5" fill="#FFFFFF"/>
+
+                            <!-- Rosy Cheeks with Authentic Hatch Lines (///) -->
+                            <ellipse cx="70" cy="125" rx="11" ry="7" fill="#FF94AF" opacity="0.85"/>
+                            <path d="M 65 122 L 67 127 M 69 122 L 71 127 M 73 122 L 75 127" stroke="#4A3B32" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+
+                            <ellipse cx="140" cy="125" rx="11" ry="7" fill="#FF94AF" opacity="0.85"/>
+                            <path d="M 135 122 L 137 127 M 139 122 L 141 127 M 143 122 L 145 127" stroke="#4A3B32" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+
+                            <!-- W-shaped Mouth -->
+                            <path d="M 98 121 Q 105 117 112 121" fill="none" stroke="#4A3B32" stroke-width="3.5" stroke-linecap="round"/>
+                            <path d="M 99 121 Q 105 128 111 121 Z" fill="#FF6B8B" stroke="#4A3B32" stroke-width="2"/>
+
+                            <!-- Holding Acorn in Hand (Left Paw) -->
+                            <!-- Acorn Nut -->
+                            <path d="M 50 128 C 45 120, 36 125, 38 135 C 40 143, 50 145, 52 136 Z" fill="#8B5A2B" stroke="#4A3B32" stroke-width="3"/>
+                            <!-- Acorn Cap -->
+                            <path d="M 43 123 C 48 120, 55 124, 53 129 C 47 131, 41 127, 43 123 Z" fill="#5C3A1E" stroke="#4A3B32" stroke-width="2.5"/>
+
+                            <!-- Arms (Paws) -->
+                            <ellipse cx="58" cy="135" rx="10" ry="7" fill="#FFF1AA" stroke="#4A3B32" stroke-width="3.5" transform="rotate(-20 58 135)"/>
+                            <ellipse cx="145" cy="135" rx="9" ry="12" fill="#FFF1AA" stroke="#4A3B32" stroke-width="3.5" transform="rotate(25 145 135)"/>
+
+                            <!-- Feet -->
+                            <ellipse cx="85" cy="176" rx="12" ry="7" fill="#FFF1AA" stroke="#4A3B32" stroke-width="4"/>
+                            <ellipse cx="125" cy="176" rx="12" ry="7" fill="#FFF1AA" stroke="#4A3B32" stroke-width="4"/>
+
+                            <!-- Fluffy Tail -->
+                            <circle cx="160" cy="148" r="9" fill="#FFF1AA" stroke="#4A3B32" stroke-width="3.5"/>
+                            <path d="M 163 143 C 167 146, 167 151, 163 154" fill="none" stroke="#4A3B32" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Access Navigation Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                
+                <!-- Card 1: About Me Quick -->
+                <div onclick="switchTab('about')" class="bg-white rounded-3xl p-6 border-3 border-ink shadow-[4px_4px_0px_#4A3B32] hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_#FFD6E0] transition-all cursor-pointer group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-12 h-12 rounded-2xl bg-pinky-100 border-2 border-ink flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                                🐥
+                            </span>
+                            <span class="text-xs font-jua px-2.5 py-1 rounded-full bg-cream-100 border border-ink text-ink">치이카와 픽!</span>
+                        </div>
+                        <h3 class="font-jua text-2xl text-ink mb-1 group-hover:text-pinky-300 transition-colors">자기소개</h3>
+                        <p class="font-gaegu text-base text-ink-light leading-snug">
+                            글을 쓰는 작가의 소소한 일상, 가치관, 그리고 귀여운 수상 이력을 살펴보세요.
+                        </p>
+                    </div>
+                    <div class="pt-4 flex items-center font-jua text-sm text-pinky-300 group-hover:translate-x-1 transition-transform">
+                        자세히 보기 <i data-lucide="chevron-right" class="w-4 h-4 ml-0.5"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2: Works Quick -->
+                <div onclick="switchTab('works')" class="bg-white rounded-3xl p-6 border-3 border-ink shadow-[4px_4px_0px_#4A3B32] hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_#D4F1F9] transition-all cursor-pointer group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-12 h-12 rounded-2xl bg-sky-100 border-2 border-ink flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                                🐱
+                            </span>
+                            <span class="text-xs font-jua px-2.5 py-1 rounded-full bg-cream-100 border border-ink text-ink">하치와레 픽!</span>
+                        </div>
+                        <h3 class="font-jua text-2xl text-ink mb-1 group-hover:text-sky-300 transition-colors">작품소개</h3>
+                        <p class="font-gaegu text-base text-ink-light leading-snug">
+                            출간된 동화책부터 힐링 에세이까지, 이야기의 세계를 들여다보세요.
+                        </p>
+                    </div>
+                    <div class="pt-4 flex items-center font-jua text-sm text-sky-300 group-hover:translate-x-1 transition-transform">
+                        작품 목록 보기 <i data-lucide="chevron-right" class="w-4 h-4 ml-0.5"></i>
+                    </div>
+                </div>
+
+                <!-- Card 3: Guestbook Quick -->
+                <div onclick="switchTab('guestbook')" class="bg-white rounded-3xl p-6 border-3 border-ink shadow-[4px_4px_0px_#4A3B32] hover:-translate-y-1.5 hover:shadow-[6px_6px_0px_#FFF0A5] transition-all cursor-pointer group flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-12 h-12 rounded-2xl bg-cream-200 border-2 border-ink flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                                🐰
+                            </span>
+                            <span class="text-xs font-jua px-2.5 py-1 rounded-full bg-pinky-100 border border-ink text-ink">우사기 픽!</span>
+                        </div>
+                        <h3 class="font-jua text-2xl text-ink mb-1 group-hover:text-amber-500 transition-colors">방명록</h3>
+                        <p class="font-gaegu text-base text-ink-light leading-snug">
+                            귀여운 스티커와 함께 작가에게 따뜻한 응원의 한 마디를 남겨주세요!
+                        </p>
+                    </div>
+                    <div class="pt-4 flex items-center font-jua text-sm text-amber-500 group-hover:translate-x-1 transition-transform">
+                        한마디 남기기 <i data-lucide="chevron-right" class="w-4 h-4 ml-0.5"></i>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PAGE 2: ABOUT ME (자기소개 - 치이카와) ================= -->
+        <section id="page-about" class="page-content space-y-8 hidden">
+            
+            <!-- Page Title Banner -->
+            <div class="text-center space-y-2">
+                <span class="px-3 py-1 rounded-full bg-pinky-100 border border-ink font-jua text-sm text-ink inline-block">
+                    🐥 치이카와와 함께하는 작가 소개
+                </span>
+                <h2 class="font-jua text-3xl sm:text-4xl text-ink">안녕하세요, 동화작가 봄봄입니다 🌸</h2>
+            </div>
+
+            <!-- Profile & Chiikawa Character Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                
+                <!-- CHIIKAWA SVG ILLUSTRATION CARD -->
+                <div class="md:col-span-5 bg-gradient-to-b from-pinky-50 to-white rounded-3xl p-6 border-4 border-ink shadow-[6px_6px_0px_#4A3B32] flex flex-col items-center justify-center text-center relative">
+                    
+                    <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full border-2 border-ink font-jua text-xs text-pinky-300 shadow-[2px_2px_0px_#4A3B32]">
+                        귀여운 치이카와 💕
+                    </div>
+
+                    <!-- Custom Authentic Chiikawa SVG (Standing on Green Meadow) -->
+                    <div class="w-56 h-56 sm:w-64 sm:h-64 my-2 animate-float">
+                        <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-[3px_5px_0px_rgba(74,59,50,0.12)]">
+                            <!-- Green Meadow Grass Patch (from reference image) -->
+                            <ellipse cx="100" cy="172" rx="65" ry="18" fill="#B5E4B2" stroke="#4A3B32" stroke-width="3"/>
+
+                            <!-- Small Round Bear Ears -->
+                            <circle cx="62" cy="72" r="15" fill="#FFFFFF" stroke="#4A3B32" stroke-width="4.5"/>
+                            <circle cx="62" cy="72" r="8" fill="#FFB7C5" opacity="0.8"/>
+
+                            <circle cx="138" cy="72" r="15" fill="#FFFFFF" stroke="#4A3B32" stroke-width="4.5"/>
+                            <circle cx="138" cy="72" r="8" fill="#FFB7C5" opacity="0.8"/>
+
+                            <!-- Round White Body (#FFFFFF) -->
+                            <ellipse cx="100" cy="120" rx="55" ry="48" fill="#FFFFFF" stroke="#4A3B32" stroke-width="4.5"/>
+
+                            <!-- Soft Curved Eyebrows -->
+                            <path d="M 72 96 Q 78 92 84 97" fill="none" stroke="#4A3B32" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M 116 97 Q 122 92 128 96" fill="none" stroke="#4A3B32" stroke-width="3" stroke-linecap="round"/>
+
+                            <!-- Big Shy Eyes with Highlights -->
+                            <ellipse cx="78" cy="110" rx="7.5" ry="10" fill="#4A3B32"/>
+                            <circle cx="76" cy="107" r="3" fill="#FFFFFF"/>
+                            <circle cx="80" cy="112" r="1.5" fill="#FFFFFF"/>
+
+                            <ellipse cx="122" cy="110" rx="7.5" ry="10" fill="#4A3B32"/>
+                            <circle cx="120" cy="107" r="3" fill="#FFFFFF"/>
+                            <circle cx="124" cy="112" r="1.5" fill="#FFFFFF"/>
+
+                            <!-- Rosy Cheeks with Hatch Lines (///) -->
+                            <ellipse cx="64" cy="122" rx="11" ry="7" fill="#FF94AF" opacity="0.85"/>
+                            <path d="M 59 119 L 61 124 M 63 119 L 65 124 M 67 119 L 69 124" stroke="#4A3B32" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+
+                            <ellipse cx="136" cy="122" rx="11" ry="7" fill="#FF94AF" opacity="0.85"/>
+                            <path d="M 131 119 L 133 124 M 135 119 L 137 124 M 139 119 L 141 124" stroke="#4A3B32" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+
+                            <!-- W-shaped Cute Mouth -->
+                            <path d="M 93 118 Q 97 122 100 119 Q 103 122 107 118" fill="none" stroke="#4A3B32" stroke-width="3.5" stroke-linecap="round"/>
+
+                            <!-- Paws (Standing pose) -->
+                            <ellipse cx="68" cy="138" rx="7" ry="10" fill="#FFFFFF" stroke="#4A3B32" stroke-width="4"/>
+                            <ellipse cx="132" cy="138" rx="7" ry="10" fill="#FFFFFF" stroke="#4A3B32" stroke-width="4"/>
+
+                            <!-- Feet on Grass -->
+                            <ellipse cx="82" cy="166" rx="9" ry="7" fill="#FFFFFF" stroke="#4A3B32" stroke-width="4"/>
+                            <ellipse cx="118" cy="166" rx="9" ry="7" fill="#FFFFFF" stroke="#4A3B32" stroke-width="4"/>
+                        </svg>
+                    </div>
+
+                    <div class="bg-white px-4 py-2 rounded-2xl border-2 border-dashed border-pinky-300 text-sm font-gaegu text-ink font-bold">
+                        "와아... 작가님의 이야기를 전해드릴게요! 💖"
+                    </div>
+                </div>
+
+                <!-- PROFILE INFO & KEYWORDS -->
+                <div class="md:col-span-7 space-y-4">
+                    
+                    <!-- Bio Box -->
+                    <div class="bg-white rounded-3xl p-6 border-3 border-ink shadow-[4px_4px_0px_#4A3B32] space-y-3">
+                        <div class="flex items-center gap-3 border-b-2 border-dashed border-ink/20 pb-3">
+                            <span class="text-3xl">✒️</span>
+                            <div>
+                                <h3 class="font-jua text-2xl text-ink">필명: 작가 봄봄 (BomBom)</h3>
+                                <p class="font-gaegu text-base text-ink-light">동화작가 · 힐링 에세이스트 · 그림책 크리에이터</p>
+                            </div>
+                        </div>
+
+                        <p class="font-gaegu text-lg text-ink leading-relaxed">
+                            어릴 적 밤하늘을 보며 상상했던 수많은 별똥별 이야기들을 하나씩 꺼내어 글로 옮기고 있습니다. 거창한 가르침보다는 오늘 하루 피곤했던 마음에 작고 따스한 핫팩 하나 쥐어주는 글을 쓰고 싶습니다.
+                        </p>
+
+                        <!-- Genre Tags -->
+                        <div class="pt-2 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-pinky-100 border border-ink font-jua text-xs text-ink">#동화책</span>
+                            <span class="px-3 py-1 rounded-full bg-cream-200 border border-ink font-jua text-xs text-ink">#힐링에세이</span>
+                            <span class="px-3 py-1 rounded-full bg-sky-100 border border-ink font-jua text-xs text-ink">#판타지소설</span>
+                            <span class="px-3 py-1 rounded-full bg-amber-100 border border-ink font-jua text-xs text-ink">#손그림일러스트</span>
+                        </div>
+                    </div>
+
+                    <!-- History / Award Note (Tape effect) -->
+                    <div class="bg-cream-100 rounded-3xl p-6 border-3 border-ink shadow-[4px_4px_0px_#4A3B32] tape-effect space-y-3">
+                        <h4 class="font-jua text-xl text-ink flex items-center gap-2">
+                            <span>🏆</span> 작가 발자취 & 수상 내역
+                        </h4>
+                        
+                        <ul class="font-gaegu text-base text-ink space-y-2">
+                            <li class="flex items-start gap-2">
+                                <span class="text-pinky-300 font-bold">2026.04</span>
+                                <span>제 5회 몽글몽글 아동문학상 대상 수상 《별빛 세탁소》</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-sky-300 font-bold">2025.10</span>
+                                <span>힐링 에세이 《오늘도 구름 한 조각 베어 물고》 출간</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-amber-500 font-bold">2024.05</span>
+                                <span>그림책 《고양이 파티시에의 비밀 레시피》 베스트셀러 선정</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-purple-400 font-bold">2023.02</span>
+                                <span>한국동화작가협회 신인문학상 입선</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PAGE 3: WORKS (작품소개 - 하치와레) ================= -->
+        <section id="page-works" class="page-content space-y-8 hidden">
+            
+            <!-- Page Title Banner with Hachiware Feature Header -->
+            <div class="bg-gradient-to-r from-sky-100 via-white to-pinky-50 rounded-3xl p-6 border-4 border-ink shadow-[6px_6px_0px_#4A3B32] flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <div class="space-y-2 text-center md:text-left">
+                    <span class="px-3 py-1 rounded-full bg-sky-200 border border-ink font-jua text-xs text-ink inline-block">
+                        🐱 하치와레가 연주하는 멜로디 서가
+                    </span>
+                    <h2 class="font-jua text-3xl sm:text-4xl text-ink">작가 봄봄의 대표 작품들 📚</h2>
+                    <p class="font-gaegu text-lg text-ink-light">
+                        카드를 클릭하면 상세한 줄거리와 아기자기한 미리보기 문장을 읽어보실 수 있어요!
+                    </p>
+                </div>
+
+                <!-- Custom Authentic Hachiware SVG (Playing Wooden Ukulele/Guitar in Green Bushes) -->
+                <div class="w-48 h-48 sm:w-56 sm:h-56 flex-none animate-float">
+                    <svg viewBox="0 0 220 200" class="w-full h-full drop-shadow-[3px_4px_0px_rgba(74,59,50,0.15)]">
+                        <!-- Green Bushes Background (from 3rd reference image) -->
+                        <path d="M 15 130 C 5 90, 45 70, 75 95 C 105 70, 155 75, 175 105 C 205 90, 225 130, 195 160 C 170 185, 30 185, 15 130 Z" fill="#A4D49D" stroke="#4A3B32" stroke-width="4"/>
+                        <path d="M 5 140 C -5 110, 30 90, 50 115 Z" fill="#88C48C" stroke="#4A3B32" stroke-width="3"/>
+
+                        <!-- Cat Ears with Dusty Blue Accent (#6699C2) -->
+                        <polygon points="52,70 76,38 88,72" fill="#6699C2" stroke="#4A3B32" stroke-width="4.5" stroke-linejoin="round"/>
+                        <polygon points="56,67 73,43 82,70" fill="#FFB7C5" opacity="0.7"/>
+
+                        <polygon points="148,70 124,38 112,72" fill="#6699C2" stroke="#4A3B32" stroke-width="4.5" stroke-linejoin="round"/>
+                        <polygon points="144,67 127,43 118,70" fill="#FFB7C5" opacity="0.7"/>
+
+                        <!-- White Body -->
+                        <ellipse cx="100" cy="115" rx="55" ry="46" fill="#FFFFFF" stroke="#4A3B32" stroke-width="4.5"/>
+
+                        <!-- Signature Dusty Blue V-Bangs (#6699C2) -->
+                        <path d="M 54 88 C 65 65, 100 60, 100 82 C 100 60, 135 65, 146 88 C 135 70, 65 70, 54 88 Z" fill="#6699C2" stroke="#4A3B32" stroke-width="3.5"/>
+
+                        <!-- Curved Eyebrows -->
+                        <path d="M 72 94 Q 78 90 84 94" fill="none" stroke="#4A3B32" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M 116 94 Q 122 90 128 94" fill="none" stroke="#4A3B32" stroke-width="2.5" stroke-linecap="round"/>
+
+                        <!-- Eyes with Highlights -->
+                        <ellipse cx="78" cy="106" rx="7" ry="9" fill="#4A3B32"/>
+                        <circle cx="76" cy="103" r="2.5" fill="#FFFFFF"/>
+
+                        <ellipse cx="122" cy="106" rx="7" ry="9" fill="#4A3B32"/>
+                        <circle cx="120" cy="103" r="2.5" fill="#FFFFFF"/>
+
+                        <!-- Rosy Cheeks with Hatch Lines (///) -->
+                        <ellipse cx="64" cy="116" rx="10" ry="6" fill="#FF94AF" opacity="0.85"/>
+                        <path d="M 60 114 L 62 118 M 64 114 L 66 118 M 68 114 L 70 118" stroke="#4A3B32" stroke-width="1.8" stroke-linecap="round" opacity="0.75"/>
+
+                        <ellipse cx="136" cy="116" rx="10" ry="6" fill="#FF94AF" opacity="0.85"/>
+                        <path d="M 132 114 L 134 118 M 136 114 L 138 118 M 140 114 L 142 118" stroke="#4A3B32" stroke-width="1.8" stroke-linecap="round" opacity="0.75"/>
+
+                        <!-- W-shaped Smile Mouth -->
+                        <path d="M 92 114 Q 96 118 100 115 Q 104 118 108 114" fill="none" stroke="#4A3B32" stroke-width="3" stroke-linecap="round"/>
+
+                        <!-- Wooden Acoustic Guitar / Ukulele (Held in hands) -->
+                        <!-- Guitar Body -->
+                        <g transform="rotate(-18 115 130)">
+                            <ellipse cx="125" cy="135" rx="22" ry="16" fill="#D48B46" stroke="#4A3B32" stroke-width="3.5"/>
+                            <circle cx="125" cy="135" r="5" fill="#4A3B32"/>
+                            <!-- Guitar Neck & Headstock -->
+                            <rect x="75" y="131" width="35" height="8" rx="2" fill="#B36B2E" stroke="#4A3B32" stroke-width="3"/>
+                            <rect x="65" y="129" width="12" height="12" rx="2" fill="#8B4513" stroke="#4A3B32" stroke-width="3"/>
+                            <!-- Strings -->
+                            <line x1="70" y1="133" x2="140" y2="133" stroke="#FFFDF4" stroke-width="1.5"/>
+                            <line x1="70" y1="136" x2="140" y2="136" stroke="#FFFDF4" stroke-width="1.5"/>
+                        </g>
+
+                        <!-- Paws Holding Guitar -->
+                        <ellipse cx="82" cy="132" rx="7" ry="9" fill="#FFFFFF" stroke="#4A3B32" stroke-width="3.5"/>
+                        <ellipse cx="138" cy="126" rx="7" ry="9" fill="#FFFFFF" stroke="#4A3B32" stroke-width="3.5"/>
+
+                        <!-- Feet -->
+                        <ellipse cx="82" cy="158" rx="9" ry="6" fill="#FFFFFF" stroke="#4A3B32" stroke-width="3.5"/>
+                        <ellipse cx="118" cy="158" rx="9" ry="6" fill="#FFFFFF" stroke="#4A3B32" stroke-width="3.5"/>
+                    </svg>
+                </div>
+
+            </div>
+
+            <!-- Books Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Book 1 -->
+                <div onclick="openModal(1)" class="bg-white rounded-3xl p-5 border-3 border-ink shadow-[4px_4px_0px_#4A3B32] hover:-translate-y-2 hover:shadow-[6px_6px_0px_#FFD6E0] transition-all cursor-pointer group flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="h-48 rounded-2xl bg-gradient-to-br from-pinky-100 to-cream-200 border-2 border-ink p-4 flex flex-col items-center justify-center text-center relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+                            <span class="text-5xl mb-2 group-hover:rotate-12 transition-transform">⭐🧺</span>
+                            <span class="font-jua text-xl text-ink leading-tight">별빛 세탁소</span>
+                            <span class="font-gaegu text-xs text-ink-light mt-1">어둠을 깨끗이 빠는 곳</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-0.5 rounded-full bg-pinky-100 border border-ink font-jua text-xs text-ink">판타지 동화</span>
+                            <span class="font-gaegu text-sm text-ink-light">2026년 출간</span>
+                        </div>
+                        <h4 class="font-jua text-xl text-ink">별빛 세탁소</h4>
+                        <p class="font-gaegu text-base text-ink-light line-clamp-2">
+                            구름 너머 달님 동네에 위치한 신비로운 세탁소! 속상했던 마음의 먼지를 깨끗하게 빨아주는 아기 곰 세탁사의 이야기.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dashed border-ink/20 flex items-center justify-between font-jua text-sm text-pinky-300">
+                        <span>미리보기 & 상세</span>
+                        <i data-lucide="book-open" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div onclick="openModal(2)" class="bg-white rounded-3xl p-5 border-3 border-ink shadow-[4px_4px_0px_#4A3B32] hover:-translate-y-2 hover:shadow-[6px_6px_0px_#D4F1F9] transition-all cursor-pointer group flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="h-48 rounded-2xl bg-gradient-to-br from-sky-100 to-cream-100 border-2 border-ink p-4 flex flex-col items-center justify-center text-center relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+                            <span class="text-5xl mb-2 group-hover:rotate-12 transition-transform">☁️🥐</span>
+                            <span class="font-jua text-xl text-ink leading-tight">오늘도 구름 한 조각</span>
+                            <span class="font-gaegu text-xs text-ink-light mt-1">마음 힐링 에세이</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-0.5 rounded-full bg-sky-100 border border-ink font-jua text-xs text-ink">공감 에세이</span>
+                            <span class="font-gaegu text-sm text-ink-light">2025년 출간</span>
+                        </div>
+                        <h4 class="font-jua text-xl text-ink">오늘도 구름 한 조각 베어 물고</h4>
+                        <p class="font-gaegu text-base text-ink-light line-clamp-2">
+                            지친 퇴근길, 하늘을 올려다볼 여유를 선물하는 45편의 따스한 문장들. 나 자신을 다독이는 시간.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dashed border-ink/20 flex items-center justify-between font-jua text-sm text-sky-300">
+                        <span>미리보기 & 상세</span>
+                        <i data-lucide="book-open" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <!-- Book 3 -->
+                <div onclick="openModal(3)" class="bg-white rounded-3xl p-5 border-3 border-ink shadow-[4px_4px_0px_#4A3B32] hover:-translate-y-2 hover:shadow-[6px_6px_0px_#FFF0A5] transition-all cursor-pointer group flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="h-48 rounded-2xl bg-gradient-to-br from-cream-200 to-amber-100 border-2 border-ink p-4 flex flex-col items-center justify-center text-center relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+                            <span class="text-5xl mb-2 group-hover:rotate-12 transition-transform">🐱🧁</span>
+                            <span class="font-jua text-xl text-ink leading-tight">고양이 파티시에</span>
+                            <span class="font-gaegu text-xs text-ink-light mt-1">행복을 굽는 베이커리</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-0.5 rounded-full bg-cream-200 border border-ink font-jua text-xs text-ink">그림책</span>
+                            <span class="font-gaegu text-sm text-ink-light">2024년 출간</span>
+                        </div>
+                        <h4 class="font-jua text-xl text-ink">고양이 파티시에의 비밀 레시피</h4>
+                        <p class="font-gaegu text-base text-ink-light line-clamp-2">
+                            용기가 필요한 손님에게는 바삭한 칭찬 쿠키를, 슬픈 손님에게는 사르르 녹는 위로 컵케이크를 주는 신비한 가게!
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-dashed border-ink/20 flex items-center justify-between font-jua text-sm text-amber-500">
+                        <span>미리보기 & 상세</span>
+                        <i data-lucide="book-open" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PAGE 4: GUESTBOOK (방명록 - 삼총사) ================= -->
+        <section id="page-guestbook" class="page-content space-y-8 hidden">
+            
+            <!-- Page Header with Trio Characters Decor (Chiikawa, Hachiware, Usagi together) -->
+            <div class="bg-gradient-to-br from-cream-100 via-pinky-50 to-sky-100 rounded-3xl p-6 border-4 border-ink shadow-[6px_6px_0px_#4A3B32] flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div class="space-y-1 text-center sm:text-left">
+                    <span class="px-3 py-1 rounded-full bg-pinky-100 border border-ink font-jua text-xs text-ink inline-block">
+                        💌 먼작귀 친구들과 함께하는 방명록
+                    </span>
+                    <h2 class="font-jua text-3xl sm:text-4xl text-ink">독자 여러분의 응원 한마디 💖</h2>
+                    <p class="font-gaegu text-lg text-ink-light">스티커를 고르고 작가에게 마음을 전해주세요!</p>
+                </div>
+
+                <!-- TRIO SVG ILLUSTRATION BANNER (Modeled after 2nd Reference Left Image) -->
+                <div class="w-48 h-36 flex-none">
+                    <svg viewBox="0 0 240 180" class="w-full h-full drop-shadow-[2px_3px_0px_rgba(74,59,50,0.15)]">
+                        <!-- 1. HACHIWARE (Left Back) -->
+                        <g>
+                            <polygon points="40,55 58,30 68,58" fill="#6699C2" stroke="#4A3B32" stroke-width="3.5"/>
+                            <polygon points="95,55 80,30 70,58" fill="#6699C2" stroke="#4A3B32" stroke-width="3.5"/>
+                            <ellipse cx="68" cy="85" rx="36" ry="32" fill="#FFFFFF" stroke="#4A3B32" stroke-width="4"/>
+                            <path d="M 42 66 C 50 48, 86 48, 94 66 Z" fill="#6699C2" stroke="#4A3B32" stroke-width="2.5"/>
+                            <ellipse cx="54" cy="78" rx="5" ry="7" fill="#4A3B32"/>
+                            <ellipse cx="82" cy="78" rx="5" ry="7" fill="#4A3B32"/>
+                            <ellipse cx="46" cy="86" rx="7" ry="4" fill="#FF94AF" opacity="0.8"/>
+                            <ellipse cx="90" cy="86" rx="7" ry="4" fill="#FF94AF" opacity="0.8"/>
+                            <path d="M 64 85 Q 68 88 72 85" fill="none" stroke="#4A3B32" stroke-width="2.5"/>
+                        </g>
+
+                        <!-- 2. USAGI (Right Back) -->
+                        <g>
+                            <ellipse cx="160" cy="25" rx="9" ry="26" fill="#FFF1AA" stroke="#4A3B32" stroke-width="3.5" transform="rotate(-6 160 25)"/>
+                            <ellipse cx="185" cy="28" rx="9" ry="26" fill="#FFF1AA" stroke="#4A3B32" stroke-width="3.5" transform="rotate(8 185 28)"/>
+                            <ellipse cx="172" cy="82" rx="36" ry="32" fill="#FFF1AA" stroke="#4A3B32" stroke-width="4"/>
+                            <path d="M 152 64 Q 158 60 164 65" fill="none" stroke="#4A3B32" stroke-width="2"/>
+                            <path d="M 180 65 Q 186 60 192 64" fill="none" stroke="#4A3B32" stroke-width="2"/>
+                            <ellipse cx="158" cy="75" rx="5" ry="7" fill="#4A3B32"/>
+                            <ellipse cx="186" cy="75" rx="5" ry="7" fill="#4A3B32"/>
+                            <ellipse cx="148" cy="83" rx="7" ry="4" fill="#FF94AF" opacity="0.8"/>
+                            <ellipse cx="196" cy="83" rx="7" ry="4" fill="#FF94AF" opacity="0.8"/>
+                            <path d="M 168 82 Q 172 85 176 82" fill="none" stroke="#4A3B32" stroke-width="2.5"/>
+                        </g>
+
+                        <!-- 3. CHIIKAWA (Front Center) -->
+                        <g>
+                            <circle cx="92" cy="82" r="11" fill="#FFFFFF" stroke="#4A3B32" stroke-width="3.5"/>
+                            <circle cx="148" cy="82" r="11" fill="#FFFFFF" stroke="#4A3B32" stroke-width="3.5"/>
+                            <ellipse cx="120" cy="120" rx="42" ry="38" fill="#FFFFFF" stroke="#4A3B32" stroke-width="4"/>
+                            <path d="M 98 100 Q 104 96 110 101" fill="none" stroke="#4A3B32" stroke-width="2.5"/>
+                            <path d="M 130 101 Q 136 96 142 100" fill="none" stroke="#4A3B32" stroke-width="2.5"/>
+                            <ellipse cx="104" cy="112" rx="6" ry="8" fill="#4A3B32"/>
+                            <circle cx="102" cy="110" r="2" fill="#FFFFFF"/>
+                            <ellipse cx="136" cy="112" rx="6" ry="8" fill="#4A3B32"/>
+                            <circle cx="134" cy="110" r="2" fill="#FFFFFF"/>
+                            <ellipse cx="94" cy="120" rx="8" ry="5" fill="#FF94AF" opacity="0.85"/>
+                            <path d="M 90 118 L 92 122 M 94 118 L 96 122" stroke="#4A3B32" stroke-width="1.5"/>
+                            <ellipse cx="146" cy="120" rx="8" ry="5" fill="#FF94AF" opacity="0.85"/>
+                            <path d="M 142 118 L 144 122 M 146 118 L 148 122" stroke="#4A3B32" stroke-width="1.5"/>
+                            <path d="M 115 118 Q 120 122 125 118" fill="none" stroke="#4A3B32" stroke-width="3"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Guestbook Form & Sticky Notes Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                
+                <!-- INPUT FORM CARD -->
+                <div class="lg:col-span-5 bg-white rounded-3xl p-6 border-3 border-ink shadow-[4px_4px_0px_#4A3B32] space-y-4">
+                    <h3 class="font-jua text-xl text-ink flex items-center gap-2">
+                        <span>✏️</span> 메시지 작성하기
+                    </h3>
+
+                    <form id="guestbook-form" onsubmit="handleGuestbookSubmit(event)" class="space-y-3">
+                        <!-- Nickname -->
+                        <div>
+                            <label class="block font-jua text-sm text-ink mb-1">닉네임</label>
+                            <input type="text" id="gb-name" required placeholder="예: 몽글이독자" 
+                                   class="w-full px-3 py-2 rounded-xl bg-cream-50 border-2 border-ink font-gaegu text-base text-ink focus:outline-none focus:border-pinky-300">
+                        </div>
+
+                        <!-- Sticker Avatar Selection -->
+                        <div>
+                            <label class="block font-jua text-sm text-ink mb-1">캐릭터 스티커 선택</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="gb-sticker" value="🐰" checked class="peer sr-only">
+                                    <div class="p-2 rounded-xl border-2 border-ink bg-cream-50 text-center peer-checked:bg-cream-200 peer-checked:border-amber-500 font-jua text-sm flex items-center justify-center gap-1 transition-all">
+                                        <span>🐰</span> 우사기
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="gb-sticker" value="🐥" class="peer sr-only">
+                                    <div class="p-2 rounded-xl border-2 border-ink bg-cream-50 text-center peer-checked:bg-pinky-100 peer-checked:border-pinky-300 font-jua text-sm flex items-center justify-center gap-1 transition-all">
+                                        <span>🐥</span> 치이카와
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="gb-sticker" value="🐱" class="peer sr-only">
+                                    <div class="p-2 rounded-xl border-2 border-ink bg-cream-50 text-center peer-checked:bg-sky-100 peer-checked:border-sky-300 font-jua text-sm flex items-center justify-center gap-1 transition-all">
+                                        <span>🐱</span> 하치와레
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Message Content -->
+                        <div>
+                            <label class="block font-jua text-sm text-ink mb-1">응원 메시지</label>
+                            <textarea id="gb-message" required rows="3" placeholder="작가님 책 잘 읽었습니다! 우라야하~ 💖" 
+                                      class="w-full px-3 py-2 rounded-xl bg-cream-50 border-2 border-ink font-gaegu text-base text-ink focus:outline-none focus:border-pinky-300 resize-none"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full py-3 rounded-2xl bg-pinky-100 hover:bg-pinky-200 border-2 border-ink font-jua text-lg text-ink shadow-[3px_3px_0px_#4A3B32] active:translate-y-0.5 active:shadow-[1px_1px_0px_#4A3B32] transition-all flex items-center justify-center gap-2">
+                            <span>💌</span> 방명록 등록하기!
+                        </button>
+                    </form>
+                </div>
+
+                <!-- STICKY NOTES DISPLAY BOARD -->
+                <div class="lg:col-span-7 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="font-jua text-lg text-ink">남겨진 메시지들 (<span id="gb-count">3</span>)</span>
+                        <span class="font-gaegu text-xs text-ink-light">최신 등록순으로 보여요</span>
+                    </div>
+
+                    <!-- Post-it Notes Container -->
+                    <div id="guestbook-list" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Dynamic items will render here via JS -->
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= BOOK DETAILS MODAL ================= -->
+    <div id="book-modal" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 border-4 border-ink shadow-[8px_8px_0px_#4A3B32] relative animate-float space-y-4 max-h-[90vh] overflow-y-auto">
+            
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-cream-200 border-2 border-ink flex items-center justify-center text-ink font-jua text-lg shadow-[2px_2px_0px_#4A3B32] hover:bg-pinky-100 transition-colors">
+                ✕
+            </button>
+
+            <!-- Modal Dynamic Header -->
+            <div class="flex items-center gap-3">
+                <span id="modal-emoji" class="text-4xl">📚</span>
+                <div>
+                    <span id="modal-badge" class="px-2.5 py-0.5 rounded-full bg-pinky-100 border border-ink font-jua text-xs text-ink">장르</span>
+                    <h3 id="modal-title" class="font-jua text-2xl text-ink mt-0.5">책 제목</h3>
+                </div>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="space-y-3 pt-2">
+                <div class="bg-cream-50 p-4 rounded-2xl border-2 border-dashed border-ink/30 space-y-2">
+                    <h4 class="font-jua text-sm text-ink text-pinky-300">📖 상세 줄거리</h4>
+                    <p id="modal-synopsis" class="font-gaegu text-lg text-ink leading-relaxed">줄거리 내용</p>
+                </div>
+
+                <div class="bg-sky-50 p-4 rounded-2xl border-2 border-ink space-y-2">
+                    <h4 class="font-jua text-sm text-ink text-sky-300 flex items-center gap-1">
+                        <span>✨</span> 작가가 뽑은 명문장 미리보기
+                    </h4>
+                    <p id="modal-quote" class="font-pen-text text-2xl text-ink leading-snug">"명문장 내용"</p>
+                </div>
+            </div>
+
+            <div class="pt-2 flex justify-end">
+                <button onclick="closeModal()" class="px-5 py-2 rounded-xl bg-cream-200 hover:bg-cream-300 border-2 border-ink font-jua text-base text-ink shadow-[2px_2px_0px_#4A3B32]">
+                    닫기
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-cream-100 border-t-4 border-dashed border-pinky-200 py-6 px-4 mt-8">
+        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left font-gaegu text-base text-ink-light">
+            <div class="flex items-center gap-2">
+                <span class="text-xl">🐰🐥🐱</span>
+                <span>© 2026 Author BomBom. All rights reserved. 먼작귀 스타일 팬 포트폴리오</span>
+            </div>
+            <div class="flex items-center gap-3 font-jua text-xs text-ink">
+                <span>✨ 매일매일 행복하기</span>
+                <span>✨ 마음껏 웃기</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT INTERACTION & LOGIC ================= -->
+    <script>
+        // Sample Books Data for Modal
+        const booksData = {
+            1: {
+                emoji: "⭐🧺",
+                badge: "판타지 동화",
+                title: "별빛 세탁소",
+                synopsis: "구름 너머 달님 동네에 위치한 신비로운 세탁소! 속상했던 마음의 먼지를 깨끗하게 빨아주고 따스한 햇살 냄새가 나는 바삭한 드라이클리닝을 선물해 주는 아기 곰 세탁사의 유쾌하고 감동적인 모험 이야기.",
+                quote: "마음이 까맣게 때 묻었을 때 오세요. 별빛 가루 한 스푼이면 다시 반짝일 수 있답니다."
+            },
+            2: {
+                emoji: "☁️🥐",
+                badge: "공감 에세이",
+                title: "오늘도 구름 한 조각 베어 물고",
+                synopsis: "하루를 치열하게 살아낸 어른들을 위한 45편의 아늑한 다정한 글들. 거창한 성공 법칙 대신 소소한 갓 구운 빵 냄새, 계절의 바람 소리, 나를 스스로 안아주는 위로의 언어들로 채워져 있습니다.",
+                quote: "남들보다 조금 천천히 걸어도 괜찮아. 구름도 저렇게 폭신하게 쉬어가잖아."
+            },
+            3: {
+                emoji: "🐱🧁",
+                badge: "그림책",
+                title: "고양이 파티시에의 비밀 레시피",
+                synopsis: "용기가 필요한 어린이에게는 바삭한 '할 수 있어 쿠키'를, 외로운 손님에게는 사르르 녹는 '체리 달콤 컵케이크'를 구워주는 고양이 셰프의 신나는 스위트 레시피 스토리!",
+                quote: "슬픔을 잊게 만드는 가장 달콤한 재료는 바로 너를 향한 따뜻한 사랑이야!"
+            }
+        };
+
+        // Guestbook Initial Sample Data
+        let guestbookEntries = [
+            {
+                name: "하치와레팬",
+                sticker: "🐱",
+                message: "작가님 책 읽고 마음이 너무 몽글몽글해졌어요! 다음 신작도 무조건 구매할게요~ 파이팅! 💖",
+                date: "2026.11.12",
+                color: "bg-sky-100"
+            },
+            {
+                name: "우사기러버",
+                sticker: "🐰",
+                message: "우라야하~~!! 작가님 포트폴리오 사이트 너무 귀여운 거 아닌가요?! 대박나세요! 🌟",
+                date: "2026.11.11",
+                color: "bg-cream-200"
+            },
+            {
+                name: "치이카와덕후",
+                sticker: "🐥",
+                message: "와아... 별빛 세탁소 읽고 울컥했어요. 항상 따뜻한 동화 써주셔서 고맙습니다 🌸",
+                date: "2026.11.10",
+                color: "bg-pinky-100"
+            }
+        ];
+
+        // SPA Navigation Function
+        function switchTab(tabId) {
+            // Hide all pages
+            document.querySelectorAll('.page-content').forEach(el => el.classList.add('hidden'));
+            
+            // Show selected page
+            const targetPage = document.getElementById(`page-${tabId}`);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+            }
+
+            // Update Active Nav Button Styles
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-pinky-200', 'bg-sky-200', 'bg-cream-200', 'border-2', 'border-ink', 'shadow-[2px_2px_0px_#4A3B32]');
+                btn.classList.add('hover:bg-cream-100');
+            });
+
+            const activeBtn = document.getElementById(`nav-${tabId}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('hover:bg-cream-100');
+                activeBtn.classList.add('bg-pinky-200', 'border-2', 'border-ink', 'shadow-[2px_2px_0px_#4A3B32]');
+            }
+
+            // Scroll smoothly to top of main area
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Render Guestbook List
+        function renderGuestbook() {
+            const container = document.getElementById('guestbook-list');
+            const countEl = document.getElementById('gb-count');
+            
+            if (!container) return;
+            container.innerHTML = '';
+            countEl.textContent = guestbookEntries.length;
+
+            const bgColors = ['bg-pinky-100', 'bg-sky-100', 'bg-cream-200', 'bg-amber-100'];
+
+            guestbookEntries.forEach((entry, idx) => {
+                const note = document.createElement('div');
+                const cardColor = entry.color || bgColors[idx % bgColors.length];
+                
+                note.className = `${cardColor} rounded-2xl p-4 border-3 border-ink shadow-[4px_4px_0px_#4A3B32] tape-effect space-y-2 relative transform ${idx % 2 === 0 ? 'rotate-1' : '-rotate-1'} hover:rotate-0 transition-transform`;
+                
+                note.innerHTML = `
+                    <div class="flex items-center justify-between border-b border-dashed border-ink/20 pb-2">
+                        <div class="flex items-center gap-1.5 font-jua text-sm text-ink">
+                            <span class="text-xl">${entry.sticker}</span>
+                            <span>${escapeHtml(entry.name)}</span>
+                        </div>
+                        <span class="font-gaegu text-xs text-ink-light">${entry.date}</span>
+                    </div>
+                    <p class="font-gaegu text-lg text-ink leading-snug break-words">${escapeHtml(entry.message)}</p>
+                `;
+                container.appendChild(note);
+            });
+        }
+
+        // Handle Guestbook Form Submission
+        function handleGuestbookSubmit(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById('gb-name');
+            const msgInput = document.getElementById('gb-message');
+            const selectedSticker = document.querySelector('input[name="gb-sticker"]:checked')?.value || '🐰';
+
+            if (!nameInput.value.trim() || !msgInput.value.trim()) return;
+
+            const today = new Date();
+            const dateStr = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, '0')}.${String(today.getDate()).padStart(2, '0')}`;
+
+            const bgColors = ['bg-pinky-100', 'bg-sky-100', 'bg-cream-200'];
+            const randomColor = bgColors[Math.floor(Math.random() * bgColors.length)];
+
+            guestbookEntries.unshift({
+                name: nameInput.value.trim(),
+                sticker: selectedSticker,
+                message: msgInput.value.trim(),
+                date: dateStr,
+                color: randomColor
+            });
+
+            // Reset Form
+            nameInput.value = '';
+            msgInput.value = '';
+
+            // Re-render
+            renderGuestbook();
+        }
+
+        // Modal Logic
+        function openModal(bookId) {
+            const data = booksData[bookId];
+            if (!data) return;
+
+            document.getElementById('modal-emoji').textContent = data.emoji;
+            document.getElementById('modal-badge').textContent = data.badge;
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-synopsis').textContent = data.synopsis;
+            document.getElementById('modal-quote').textContent = `"${data.quote}"`;
+
+            const modal = document.getElementById('book-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('book-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Helper: Escape HTML
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            switchTab('home');
+            renderGuestbook();
+        });
+    </script>
+</body>
+</html>
